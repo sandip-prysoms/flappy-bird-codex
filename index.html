@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A classic Flappy Bird clone with polished controls, scoring, pause/resume, and persistent high score."
+    />
+    <title>Flappy Bird Classic</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-label="Flappy Bird game container">
+      <header class="topbar">
+        <h1>Flappy Bird Classic</h1>
+        <div class="toggles" role="group" aria-label="Game options">
+          <button id="muteBtn" type="button" aria-pressed="false" title="Mute or unmute sound effects">
+            🔊 Sound
+          </button>
+          <button id="pauseBtn" type="button" aria-pressed="false" title="Pause or resume game">
+            ⏸ Pause
+          </button>
+        </div>
+      </header>
+
+      <section class="board-wrap" aria-live="polite">
+        <canvas id="gameCanvas" width="480" height="720" aria-label="Flappy Bird game board"></canvas>
+        <div id="hud" class="hud">
+          <div class="scorecard" aria-label="Current score">Score: <span id="score">0</span></div>
+          <div class="scorecard" aria-label="Best score">Best: <span id="bestScore">0</span></div>
+        </div>
+
+        <div id="overlay" class="overlay" role="dialog" aria-modal="true">
+          <h2 id="overlayTitle">Flappy Bird</h2>
+          <p id="overlayText">Press Space, Click, or Tap to fly.</p>
+          <div class="overlay-actions">
+            <button id="startBtn" type="button">Start Game</button>
+          </div>
+          <p class="hint">Controls: Space / Arrow Up / Click / Tap • P = Pause • M = Mute</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
